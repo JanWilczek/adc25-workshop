@@ -1,0 +1,9 @@
+{
+	"name": "C++ and Python",
+	"image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/cmake:1": {},
+		"ghcr.io/devcontainers-extra/features/ninja-asdf:2": {},
+		"ghcr.io/devcontainers-extra/features/git-lfs:1": {}
+	}
+}
