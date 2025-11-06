@@ -7,6 +7,7 @@ namespace audio_plugin {
 TEST(AudioProcessor, StereoTest) {
   using namespace wolfsound::literals;
   using namespace std::chrono_literals;
+  const juce::ScopedJuceInitialiser_GUI initializer;
 
   // given
   AudioPluginAudioProcessor processor{{}};
