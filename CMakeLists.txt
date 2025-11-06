@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 # Sets a few variables, like PROJECT_NAME
-project(Adc24Workshop)
+project(Adc25Workshop)
 
 # Always use the newest C++ standard on green-field projects if possible.
 # Currently, JUCE supports only C++ 20 cross-platform.
@@ -27,9 +27,7 @@ cpmaddpackage(
   NAME
   JUCE
   GIT_TAG
-  8.0.3
-  VERSION
-  8.0.3
+  8.0.10
   GITHUB_REPOSITORY
   juce-framework/JUCE
   SOURCE_DIR
@@ -42,7 +40,7 @@ cpmaddpackage(
   GITHUB_REPOSITORY
   JanWilczek/wolfsound-dsp-utils
   VERSION
-  0.1.1
+  0.4.0
   SOURCE_DIR
   ${LIB_DIR}/wolfsound-dsp-utils
 )
@@ -53,10 +51,8 @@ cpmaddpackage(
   GOOGLETEST
   GITHUB_REPOSITORY
   google/googletest
-  GIT_TAG
-  v1.15.2
   VERSION
-  1.15.2
+  1.17.0
   SOURCE_DIR
   ${LIB_DIR}/googletest
   OPTIONS
