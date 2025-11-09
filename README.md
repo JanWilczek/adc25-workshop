@@ -22,9 +22,9 @@ Workshop hosted at the Audio Developer Conference 2025 in Bristol.
         4.  [4. Downloading dependencies](#4-downloading-dependencies)
 2. [📝 Workshop tasks](#-workshop-tasks)
     1. [Task 1 (`task1a` branch): Design](#task-1-task1a-branch-design)
-    2. [Task 2 (`task2` branch): Prototype](#task-2-task2-branch-prototype)
-    3. [Task 3 (`task3` branch): Implementation part 1](#task-3-task3-branch-implementation-part-1)
-    4. [Task 4 (`task4` branch): Implementation part 2](#task-4-task4-branch-implementation-part-2)
+    2. [Task 2 (`task2a` branch): Prototype](#task-2-task2a-branch-prototype)
+    3. [Task 3 (`task3a` branch): Implementation part 1](#task-3-task3a-branch-implementation-part-1)
+    4. [Task 4 (`task4a` branch): Implementation part 2](#task-4-task4a-branch-implementation-part-2)
 
 
 ## 🚀 Getting started
@@ -189,7 +189,7 @@ C++ code in this repository is based on my [`audio-plugin-template` repository](
 
 This workshop consists of several tasks in a logical progression. The goal is to build a working flanger plugin in C++ using the JUCE C++ framework.
 
-You should start each task by checking out the appropriate branch (`task1a`, `task2`, etc.).
+You should start each task by checking out the appropriate branch (`task1a`, `task2a`, etc.).
 
 ### Task 1 (`task1a` branch): Design
 
@@ -224,10 +224,10 @@ Legend:
 
 These equations are the basis of the prototype.
 
-### Task 2 (`task2` branch): Prototype
+### Task 2 (`task2a` branch): Prototype
 
 ```bash
-git checkout task2
+git checkout task2a
 ```
 
 - [ ] Run `python py/main.py data/saw200.0Hz5.0s.wav` and check that audibly the output signal is the same as the input signal
@@ -255,10 +255,10 @@ git checkout task2
     - [ ] Run `python py/main.py data/saw200.0Hz5.0s.wav` and check if you hear the influence of the LFO (the signal slowly changes its timbre)
     - [ ] Inspect the spectrograms generated in the _output_ folder. How is the spectrogram of the output different from the "fixed modulated delay" version? Was it expected?
 
-### Task 3 (`task3` branch): Implementation part 1
+### Task 3 (`task3a` branch): Implementation part 1
 
 ```bash
-git checkout task3
+git checkout task3a
 ```
 
 In this part, your goal is to create a basic working implementation of the flanger plugin. For this purpose, we'll reuse my [`audio-plugin-template` repository](https://github.com/JanWilczek/audio-plugin-template).
@@ -284,10 +284,10 @@ In this part, you can put all your code into _Flanger.h_.
 - [ ] Build your project
 - [ ] Run the end-2-end unit test with `ctest --preset <used-preset>` again. Can you hear a spectral coloration in the output file? Is it the same as in the initial (fixed-delay) Python implementation?
 
-### Task 4 (`task4` branch): Implementation part 2
+### Task 4 (`task4a` branch): Implementation part 2
 
 ```bash
-git checkout task4
+git checkout task4a
 ```
 
 In the final part of this workshop, you will add the LFO and expose its frequency as a plugin parameter using JUCE APIs. You can implement your own LFO class, however, for simplicity, we'll use JUCE's `juce::dsp::Oscillator`. We'll expose the parameter in the GUI using `juce::GenericAudioProcessorEditor`. Finally, we'll add stereo processing using `juce::dsp::ProcessorDuplicator`; that's why we used `prepare()`/`process()`/`reset()` member function trio.
