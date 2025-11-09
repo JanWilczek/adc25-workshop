@@ -4,7 +4,27 @@ Workshop hosted at the Audio Developer Conference 2025 in Bristol.
 
 [Slides](docs/ADC25_Workshop_Slides_DSP_In_Practice.pdf)
 
+## Table of Contents
+
+1. [🚀 Getting started](#-getting-started)
+    1. [GitHub Codespaces](#github-codespaces)
+    2. [Local setup](#local-setup)
+        1. [General prerequisites](#general-prerequisites)
+        2. [Python environment setup](#python-environment-setup)
+        3. [C++ setup](#c-setup)
+           1. [Mac users](#mac-users)
+           2. [Windows users](#windows-users)
+           3. [Linux users](#linux-users)
+2. [📝 Workshop tasks](#workshop-tasks)
+    1. [Task 1 (`task1` branch): Design](#task-1-task1-branch-design)
+    2. [Task 2 (`task2` branch): Prototype](#task-2-task2-branch-prototype)
+    3. [Task 3 (`task3` branch): Implementation part 1](#task-3-task3-branch-implementation-part-1)
+    4. [Task 4 (`task4` branch): Implementation part 2](#task-4-task4-branch-implementation-part-2)
+
+
 ## 🚀 Getting started
+
+You can work on the code using [GitHub Codespaces](#github-codespaces) or [locally](#local-setup).
 
 ### GitHub Codespaces
 
@@ -24,7 +44,7 @@ And that's it!
 
 Follow these instructions **before** attending the workshop. There is high risk that because of low WiFi bandwidth at the conference venue, it will take too long or be impossible to set it up on the spot.
 
-#### General prerequisites
+#### 1. Install Git with Git LFS and download LFS files
 
 You need to have `git` installed and in your PATH. Here are the commands that we will use in this workshop:
 
@@ -37,6 +57,8 @@ git add <path-to-file> # stage a file (especially important for untracked files)
 git commit -a -m "<commit-message>" # commit all changes with a specific message
 ```
 
+##### 1.1 Git LFS
+
 WAV files and PNG files require `git-lfs`. It should be bundled with your `git` installation but you may need to manually initialize it inside the repository. After cloning this repository, run
 
 ```bash
@@ -47,6 +69,8 @@ git lfs checkout
 
 You can try playing back files in the _data_ folder to check if it worked correctly.
 
+##### Bonus tip
+
 The complete solution to all the tasks are present on the `main` branch. If at any time during the workshop you need to check the reference solution, compare the difference between your working tree and the `main` branch.
 
 ```bash
@@ -55,7 +79,7 @@ git diff main
 
 In Visual Studio Code, there's a wonderful GitLens plugin that allows you to visually compare against the `main` branch via "GitLens: Compare Working Tree with..." command.
 
-#### Python environment setup
+#### 2. Python environment setup
 
 For this workshop, you need to have Python 3 installed and in your PATH. Code was tested with Python 3.11 and 3.12.
 
@@ -86,33 +110,31 @@ You also should be able to run the audio processing script:
 python py/main.py data/saw200.0Hz5.0s.wav
 ```
 
-#### C++ setup
+##### 2.1. Linux users
+
+To create a Python virtual environment, I needed to install `python3.12-venv` package with
+
+```bash
+sudo apt install python3.12-venv
+```
+
+#### 3. C++ setup
 
 This workshop requires the following tools installed on your machine and available in your PATH:
 
-- a **working C++ compiler** that supports C++ 20,
-- CMake 3.22 or newer,
-- a build system like ninja (recommended), MSBuild (bundled with Visual Studio), xcode-build (bundled with Xcode), or make (UNIX Makefiles)
+- [CMake 3.22 or newer](https://cmake.org/download),
+- a **working C++ compiler** that supports C++ 20 (see platform-specific instructions below), and
+- a build system like [ninja](https://ninja-build.org/) (recommended), MSBuild (bundled with Visual Studio), xcode-build (bundled with Xcode), or make (UNIX Makefiles) (see platform-specific instructions below)
 
-Once this is in place, run these CMake commands:
+##### 3.1. Mac users
 
-```bash
-# Downloads C++ dependencies and generates the project for ninja (check CMakePresets.json for other generators)
-cmake --preset default
+Install the latest version of Xcode. The repostitory works with Xcode 16. Older versions of Xcode may be problematic.
 
-# Builds the project
-cmake --build --preset default
-```
+##### 3.2. Windows users
 
-The repository works well with the CLion IDE.
+Install the latest version of Visual Studio.
 
-C++ code in this repository is based on my [`audio-plugin-template` repository](https://github.com/JanWilczek/audio-plugin-template).
-
-##### Mac users
-
-The repostitory works with Xcode 16. Older versions of Xcode may be problematic.
-
-##### Windows users
+###### 3.2.1. If you want to use CMake from the command-line
 
 On Windows, to have the compiler on your PATH, you need to run a batch script. Assuming, you have Visual Studio 2022 installed, you can run the following command to initialize C++ environment in your shell.
 
@@ -120,12 +142,12 @@ On Windows, to have the compiler on your PATH, you need to run a batch script. A
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 ```
 
-##### Linux users
+##### 3.3. Linux users
 
-To create a Python virtual environment, I needed to install `python3.12-venv` package with
+Install `gcc` and `make`.
 
 ```bash
-sudo apt install python3.12-venv
+sudo apt update && sudo apt install --only-upgrade gcc make
 ```
 
 Before generating the project above, you need to install [JUCE dependencies](https://github.com/juce-framework/JUCE/blob/master/docs/Linux%20Dependencies.md) with the following command:
@@ -141,7 +163,24 @@ sudo apt install libasound2-dev libjack-jackd2-dev \
     libglu1-mesa-dev mesa-common-dev
 ```
 
-## Workshop tasks
+#### 4. Downloading dependencies
+
+After installing everything from point 3, run these CMake commands in the terminal (or use the command palette in VS Code):
+
+```bash
+# Downloads C++ dependencies and generates the project
+# Use "default" for ninja, "vs" for Visual Studio, and "xcode-build" for Xcode
+cmake --preset default
+
+# Builds the project
+cmake --build --preset default
+```
+
+The repository works well with the CLion IDE.
+
+C++ code in this repository is based on my [`audio-plugin-template` repository](https://github.com/JanWilczek/audio-plugin-template).
+
+## 📝 Workshop tasks
 
 This workshop consists of several tasks in a logical progression. The goal is to build a working flanger plugin in C++ using the JUCE C++ framework.
 
