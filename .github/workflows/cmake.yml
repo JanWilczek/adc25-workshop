@@ -83,6 +83,7 @@ jobs:
 
     - name: Check file exists
       run: ls -la data/saw200.0Hz5.0s.wav
+      shell: bash
 
     - name: Cache dependencies
       id: cache-libs
