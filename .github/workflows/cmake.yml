@@ -46,10 +46,9 @@ jobs:
         path: |
           ${GITHUB_WORKSPACE}/ninja-build
 
-    - name: checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
-        lfs: 'true'
+        lfs: true
 
     - name: Cache dependencies
       id: cache-libs
