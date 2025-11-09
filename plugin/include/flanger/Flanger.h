@@ -23,7 +23,7 @@ public:
   void process(const ProcessContext& processContext) {
     const auto& inputBlock = processContext.getInputBlock();
     const auto& outputBlock = processContext.getOutputBlock();
-    const auto channelCount = outputBlock.getNumChannels();
+    [[maybe_unused]] const auto channelCount = outputBlock.getNumChannels();
     const auto sampleCount = outputBlock.getNumSamples();
 
     // These sanity checks save you a headache later on in the development.
@@ -31,7 +31,7 @@ public:
     jassert(inputBlock.getNumSamples() == sampleCount);
 
     // Implementing mono first? Assert it!
-    constexpr auto SUPPORTED_CHANNELS = 1u;
+    [[maybe_unused]] constexpr auto SUPPORTED_CHANNELS = 1u;
     jassert(channelCount == SUPPORTED_CHANNELS);
 
     // Always check if the processor is not bypassed

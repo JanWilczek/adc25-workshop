@@ -2,7 +2,7 @@
   "version": 5,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 22,
+    "minor": 25,
     "patch": 0
   },
   "configurePresets": [
@@ -76,7 +76,6 @@
       "name": "xcode",
       "inherits": "default",
       "configurePreset": "xcode",
-      // Use Debug by default
       "configuration": "Debug"
     }
   ]
