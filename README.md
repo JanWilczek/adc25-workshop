@@ -4,9 +4,6 @@ Workshop hosted at the Audio Developer Conference 2025 in Bristol.
 
 [Slides](docs/ADC25_Workshop_Slides_DSP_In_Practice.pdf)
 
-foo
-
-
 ## 🚀 Getting started
 
 ### GitHub Codespaces
