@@ -9,13 +9,18 @@ Workshop hosted at the Audio Developer Conference 2025 in Bristol.
 1. [🚀 Getting started](#-getting-started)
     1. [GitHub Codespaces](#github-codespaces)
     2. [Local setup](#local-setup)
-        1. [General prerequisites](#general-prerequisites)
-        2. [Python environment setup](#python-environment-setup)
-        3. [C++ setup](#c-setup)
-           1. [Mac users](#mac-users)
-           2. [Windows users](#windows-users)
-           3. [Linux users](#linux-users)
-2. [📝 Workshop tasks](#workshop-tasks)
+        1. [1. Install Git with Git LFS and download LFS files](#1-install-git-with-git-lfs-and-download-lfs-files)
+           1. [1.1 Git LFS](#11-git-lfs)
+           2. [Bonus tip](#bonus-tip)
+        2. [2. Python environment setup](#2-python-environment-setup)
+           1. [2.1. Linux users](#21-linux-users)
+        3. [3. C++ setup](#3-c-setup)
+           1. [3.1. Mac users](#31-mac-users)
+           2. [3.2. Windows users](#32-windows-users)
+              1. [3.2.1. If you want to use CMake from the command line](#321-if-you-want-to-use-cmake-from-the-command-line)
+           3. [3.3. Linux users](#33-linux-users)
+        4.  [4. Downloading dependencies](#4-downloading-dependencies)
+2. [📝 Workshop tasks](#-workshop-tasks)
     1. [Task 1 (`task1` branch): Design](#task-1-task1-branch-design)
     2. [Task 2 (`task2` branch): Prototype](#task-2-task2-branch-prototype)
     3. [Task 3 (`task3` branch): Implementation part 1](#task-3-task3-branch-implementation-part-1)
@@ -134,7 +139,7 @@ Install the latest version of Xcode. The repostitory works with Xcode 16. Older 
 
 Install the latest version of Visual Studio.
 
-###### 3.2.1. If you want to use CMake from the command-line
+###### 3.2.1. If you want to use CMake from the command line
 
 On Windows, to have the compiler on your PATH, you need to run a batch script. Assuming, you have Visual Studio 2022 installed, you can run the following command to initialize C++ environment in your shell.
 
