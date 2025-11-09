@@ -81,6 +81,9 @@ jobs:
 
     - uses: actions/checkout@v4
 
+    - name: Check file exists
+      run: ls -la data/saw200.0Hz5.0s.wav
+
     - name: Cache dependencies
       id: cache-libs
       uses: actions/cache@v4
