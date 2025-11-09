@@ -1,11 +1,11 @@
 # Mandatory line, sets the minimum version of CMake that should be used with this repository.
-# I specified 3.22 because I trust it. However, currently I have 3.26 installed on my machine.
+# I specified 3.25 because I trust it. However, currently I have 3.26 installed on my machine.
 # To verify your version run
 # $ cmake --version
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.25)
 
 # Sets a few variables, like PROJECT_NAME
-project(Adc24Workshop)
+project(Adc25Workshop)
 
 # Always use the newest C++ standard on green-field projects if possible.
 # Currently, JUCE supports only C++ 20 cross-platform.
@@ -27,9 +27,7 @@ cpmaddpackage(
   NAME
   JUCE
   GIT_TAG
-  8.0.3
-  VERSION
-  8.0.3
+  8.0.10
   GITHUB_REPOSITORY
   juce-framework/JUCE
   SOURCE_DIR
@@ -42,7 +40,7 @@ cpmaddpackage(
   GITHUB_REPOSITORY
   JanWilczek/wolfsound-dsp-utils
   VERSION
-  0.1.1
+  0.4.0
   SOURCE_DIR
   ${LIB_DIR}/wolfsound-dsp-utils
 )
@@ -53,10 +51,8 @@ cpmaddpackage(
   GOOGLETEST
   GITHUB_REPOSITORY
   google/googletest
-  GIT_TAG
-  v1.15.2
   VERSION
-  1.15.2
+  1.17.0
   SOURCE_DIR
   ${LIB_DIR}/googletest
   OPTIONS

@@ -21,8 +21,10 @@ TEST(DelayLine, PopOrderCorrespondsToPushOrder) {
   delayLine.pushSample(0, 4.f);
   delayLine.pushSample(0, 5.f);
 
-  ASSERT_FLOAT_EQ(3.f, delayLine.popSample(0, 12, false));
-  ASSERT_FLOAT_EQ(3.f, delayLine.popSample(0, 11, false));
+  // cannot pop samples with delay larger than delay length
+  // ASSERT_FLOAT_EQ(3.f, delayLine.popSample(0, 12, false));
+  // ASSERT_FLOAT_EQ(3.f, delayLine.popSample(0, 11, false));
+
   ASSERT_FLOAT_EQ(3.f, delayLine.popSample(0, 10, false));
   ASSERT_FLOAT_EQ(4.f, delayLine.popSample(0, 9, false));
   ASSERT_FLOAT_EQ(5.f, delayLine.popSample(0, 8, false));
