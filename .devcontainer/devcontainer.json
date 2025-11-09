@@ -1,0 +1,28 @@
+{
+  "name": "C++ and Python",
+  "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/cmake:1": {},
+    "ghcr.io/devcontainers-extra/features/ninja-asdf:2": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "toolsToInstall": "virtualenv,black"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "locale": "en"
+      },
+      "extensions": [
+        "ms-vscode.vscode-loc-en",
+        "pkief.material-icon-theme",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.autopep8"
+      ]
+    }
+  },
+  "onCreateCommand": "bash .devcontainer/setup.sh"
+}

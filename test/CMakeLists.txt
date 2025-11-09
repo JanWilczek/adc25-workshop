@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.22)
-
 project(AudioPluginTest)
 
 # Signals to CMake that we want to run tests from this directory.
@@ -18,7 +16,10 @@ target_include_directories(
 
 set_source_files_properties(${SOURCES} PROPERTIES COMPILE_OPTIONS "${PROJECT_WARNINGS_CXX}")
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE AUDIO_INPUT_FILES_DIRECTORY="${CMAKE_SOURCE_DIR}/data")
+target_compile_definitions(
+  ${PROJECT_NAME} PRIVATE AUDIO_INPUT_FILES_DIRECTORY="${CMAKE_SOURCE_DIR}/data"
+                          AUDIO_OUTPUT_FILES_DIRECTORY="${CMAKE_SOURCE_DIR}/output"
+)
 
 # Thanks to the fact that we link against the gtest_main library, we don't have to write the main function ourselves.
 target_link_libraries(${PROJECT_NAME} PRIVATE Flanger wolfsound::wolfsound_dsp_utils)

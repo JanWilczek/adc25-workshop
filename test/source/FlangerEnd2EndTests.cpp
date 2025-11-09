@@ -10,7 +10,8 @@ TEST(FlangerTest, FileEnd2End) {
   wolfsound::ProcessorFileIoTest<Flanger<float>> test{
       {.inputAudioFile = "saw200.0Hz5.0s.wav",
        .name = std::string{testInfo->test_case_name()} + "_" + testInfo->name(),
-       .audioInputFilesDirectoryPath = AUDIO_INPUT_FILES_DIRECTORY}};
+       .audioInputFilesDirectoryPath = AUDIO_INPUT_FILES_DIRECTORY,
+       .audioOutputFilesDirectoryPath = AUDIO_OUTPUT_FILES_DIRECTORY}};
   test.run();
 }
 }  // namespace audio_plugin
