@@ -100,7 +100,7 @@ python3 -m venv venv
 
 # activate it
 source venv/bin/activate # macOS, Linux
-.\venv\bin\Scripts\Acitvate.ps1 # Windows
+.\venv\bin\Scripts\Activate.ps1 # Windows
 
 # install the dependencies within the environment
 pip install .
