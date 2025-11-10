@@ -147,7 +147,7 @@ class Flanger:
         self.feedforward = 0.7
 
         self.lfo = LFO(sample_rate)
-        lfo_frequency_hz = 0.1
+        lfo_frequency_hz = 2.0
         self.lfo.set_frequency(lfo_frequency_hz)
 
     def process_sample(self, input_sample):
