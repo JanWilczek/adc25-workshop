@@ -111,7 +111,7 @@ You also should be able to run the audio processing script:
 
 
 ```bash
-python py/main.py data/saw200.0Hz5.0s.wav
+python py/main.py data/guitar_5th.wav
 ```
 
 ##### 2.1. Linux users
@@ -247,7 +247,7 @@ In this part, we're going to implement a flanger prototype. To this end, we'll u
 
     $$y[n] = \text{blend }x_h[n] + \text{feedforward } x_h[n - m].$$
 
-- [ ] Run `python py/main.py data/saw200.0Hz5.0s.wav` and check that audibly the output signal is the same as the input signal
+- [ ] Run `python py/main.py data/guitar_5th.wav` and check that audibly the output signal is the same as the input signal
     - That's because the flanger returns the input sample in the `process_sample()` function.
 - [ ] Inspect the spectrograms generated in the _output_ folder. Are they identical visually?
 - [ ] Properly initialize the `Flanger` class instance
@@ -261,7 +261,7 @@ In this part, we're going to implement a flanger prototype. To this end, we'll u
     - [ ] Calculate the output sample $y[n]$ (use a fixed delay instead of a modulated delay for now)
     - [ ] "Update the buffers": write $x_h[n]$ into the delay line
     - [ ] Return the output sample from the function
-    - [ ] Run `python py/main.py data/saw200.0Hz5.0s.wav` and check if you hear a spectral coloration of the input.
+    - [ ] Run `python py/main.py data/guitar_5th.wav` and check if you hear a spectral coloration of the input.
     - [ ] Inspect the spectrograms generated in the _output_ folder. How is the spectrogram of the output different from the spectrogram of the input? Was it expected?
 - [ ] Add an LFO
     - [ ] Instantiate an `LFO` instance in the `Flanger` constructor
@@ -269,7 +269,7 @@ In this part, we're going to implement a flanger prototype. To this end, we'll u
     - [ ] In `process_sample()`, `get_next_value()` of the LFO and transform it to unipolar [0, 1] range
     - [ ] Calculate the delay value of the modulated tap for the current sample
     - [ ] Replace the previously fixed delay value in output sample computation with the LFO-modulated one
-    - [ ] Run `python py/main.py data/saw200.0Hz5.0s.wav` and check if you hear the influence of the LFO (the signal slowly changes its timbre)
+    - [ ] Run `python py/main.py data/guitar_5th.wav` and check if you hear the influence of the LFO (the signal slowly changes its timbre)
     - [ ] Inspect the spectrograms generated in the _output_ folder. How is the spectrogram of the output different from the "fixed modulated delay" version? Was it expected?
 
 ### Task 3 (`task3a` branch): Implementation part 1
