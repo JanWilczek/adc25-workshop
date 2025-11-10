@@ -17,6 +17,7 @@ todo.md
 done.md
 local-build/
 cmake-build-debug/
+problems_encountered.md
 
 # Prerequisites
 *.d
