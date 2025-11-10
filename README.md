@@ -329,7 +329,7 @@ Usually, we would implement parameter smoothing in this part but `juce::dsp::Osc
     - [ ] Compile the project
     - [ ] Run the end-2-end unit test with `ctest --preset <used-preset>` again. Can you hear the influence of the LFO in the output file? Is it the same as in the final (modulated-delay) Python implementation?
 - [ ] Make parameters (LFO frequency) adjustable
-    - [ ] Create a `juce::AudioParameterValueTreeState apvts_` member in `PluginProcessor`
+    - [ ] Create a `juce::AudioProcessorValueTreeState apvts_` member in `PluginProcessor`
     - [ ] Create a `juce::AudioParameterFloat` instance upon `PluginProcessor` construction and add it to the `apvts_`; use the following parameters:
         * ID "flangerFrequencyHz"
         * version hint 1
