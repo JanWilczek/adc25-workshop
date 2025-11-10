@@ -40,7 +40,10 @@ Pros: No need to install anything to your computer, everything runs in the cloud
 
 Cons: Compilation may be slower. You will use a Linux environment. You won't be able to run the plugin, only end-2-end tests.
 
-1. Fork the repo.
+1. Fork the repo with all branches (untick "Copy the `main` branch only").
+
+   <img alt="forking the repo" src="docs/img/forking.png" width="500px"/>
+
 1. On your fork, click "Code -> Codespaces -> Create a codespace on "main""
 1. Wait until the container builds
 
