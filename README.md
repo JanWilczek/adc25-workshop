@@ -2,6 +2,8 @@
 
 Workshop hosted at the Audio Developer Conference 2025 in Bristol.
 
+[Slides](docs/ADC25_Workshop_Slides_DSP_In_Practice.pdf)
+
 ## Table of Contents
 
 1. [🚀 Getting started](#-getting-started)
