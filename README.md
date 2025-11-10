@@ -178,7 +178,7 @@ After installing everything from point 3, run these CMake commands in the termin
 
 ```bash
 # Downloads C++ dependencies and generates the project
-# Use "default" for ninja, "vs" for Visual Studio, and "xcode-build" for Xcode
+# Use "default" for ninja, "vs" for Visual Studio, or "xcode" for Xcode
 cmake --preset default
 
 # Builds the project
