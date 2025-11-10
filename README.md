@@ -18,6 +18,7 @@ Workshop hosted at the Audio Developer Conference 2025 in Bristol.
               1. [3.2.1. If you want to use CMake from the command line](#321-if-you-want-to-use-cmake-from-the-command-line)
            3. [3.3. Linux users](#33-linux-users)
         4.  [4. Downloading dependencies](#4-downloading-dependencies)
+        5.  [5. Digital Audio Workstation](#5-digital-audio-workstation)
 2. [📝 Workshop tasks](#-workshop-tasks)
     1. [Task 1 (`task1a` branch): Design](#task-1-task1a-branch-design)
     2. [Task 2 (`task2a` branch): Prototype](#task-2-task2a-branch-prototype)
@@ -182,6 +183,10 @@ cmake --build --preset default
 The repository works well with the CLion IDE.
 
 C++ code in this repository is based on my [`audio-plugin-template` repository](https://github.com/JanWilczek/audio-plugin-template).
+
+#### 5. Digtial Audio Workstation
+
+To run the workshop plugin, you need a digital audio workstation (DAW). I recommend [Reaper](https://www.reaper.fm/) or [Audacity](https://www.audacityteam.org/).
 
 ## 📝 Workshop tasks
 
